@@ -1,0 +1,16 @@
+[
+  {
+    "fromAccount": null,
+    "toAccount": "ACC-12345",
+    "amount": 250.0,
+    "currency": "USD",
+    "type": "deposit"
+  },
+  {
+    "fromAccount": "ACC-12345",
+    "toAccount": "ACC-67890",
+    "amount": 100.5,
+    "currency": "USD",
+    "type": "transfer"
+  }
+]
