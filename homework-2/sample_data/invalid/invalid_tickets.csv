@@ -1,0 +1,2 @@
+customer_id,customer_email,customer_name,subject,description,metadata_source,metadata_browser,metadata_device_type
+bad-csv-001,not-an-email,Bad CSV,Short desc,too short,web_form,Chrome,desktop

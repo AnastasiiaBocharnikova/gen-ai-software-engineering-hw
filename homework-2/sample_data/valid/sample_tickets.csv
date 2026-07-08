@@ -1,0 +1,51 @@
+customer_id,customer_email,customer_name,subject,description,category,priority,status,assigned_to,metadata_source,metadata_browser,metadata_device_type,tags
+cust-csv-001,csv001@example.com,Ada CSV 001,Password reset issue,I cannot access my account after password reset,account_access,urgent,new,,web_form,Chrome,desktop,login|password
+cust-csv-002,csv002@example.com,Ada CSV 002,Invoice duplicate charge,I see a duplicate payment on my latest invoice,billing_question,medium,new,,email,Safari,mobile,billing|invoice
+cust-csv-003,csv003@example.com,Ada CSV 003,Dashboard crash,The dashboard crashes when opening reports,technical_issue,medium,in_progress,agent-1,api,Firefox,desktop,crash|reports
+cust-csv-004,csv004@example.com,Ada CSV 004,Export suggestion,Please add a suggestion to export filtered tickets,feature_request,low,new,,chat,Edge,desktop,export|suggestion
+cust-csv-005,csv005@example.com,Ada CSV 005,Checkout defect,Steps to reproduce checkout defect with payment button,bug_report,medium,new,,web_form,Chrome,mobile,bug|checkout
+cust-csv-006,csv006@example.com,Ada CSV 006,Security concern,There is a critical security problem with account access,account_access,urgent,new,agent-2,email,Chrome,desktop,security|login
+cust-csv-007,csv007@example.com,Ada CSV 007,Refund request,I need a refund for a cancelled subscription,billing_question,medium,waiting_customer,agent-3,phone,Safari,mobile,refund
+cust-csv-008,csv008@example.com,Ada CSV 008,Mobile error,The mobile app shows an error on startup,technical_issue,medium,new,,chat,Chrome,mobile,mobile|error
+cust-csv-009,csv009@example.com,Ada CSV 009,Minor cosmetic issue,There is a minor cosmetic alignment issue on settings,technical_issue,low,new,,web_form,Firefox,desktop,cosmetic
+cust-csv-010,csv010@example.com,Ada CSV 010,Feature request,Please add team level saved views for agents,feature_request,medium,new,,api,Chrome,desktop,feature
+cust-csv-011,csv011@example.com,Ada CSV 011,Two factor problem,My 2FA code is not accepted during login,account_access,medium,new,,web_form,Safari,mobile,2fa|login
+cust-csv-012,csv012@example.com,Ada CSV 012,Payment failed,Payment failed but my card was charged,billing_question,high,in_progress,agent-4,email,Chrome,desktop,payment
+cust-csv-013,csv013@example.com,Ada CSV 013,Production down,Production down after latest account change,technical_issue,urgent,new,agent-1,api,Firefox,desktop,production
+cust-csv-014,csv014@example.com,Ada CSV 014,Report filter bug,Steps to reproduce report filter bug are attached,bug_report,medium,new,,web_form,Edge,desktop,bug|reports
+cust-csv-015,csv015@example.com,Ada CSV 015,Account question,I have a general question about account settings,other,medium,new,,chat,Chrome,mobile,question
+cust-csv-016,csv016@example.com,Ada CSV 016,Password email missing,The password reset email never arrives,account_access,medium,new,,email,Safari,desktop,password
+cust-csv-017,csv017@example.com,Ada CSV 017,Invoice download,The invoice download button is missing,billing_question,medium,new,,web_form,Chrome,desktop,invoice
+cust-csv-018,csv018@example.com,Ada CSV 018,App freezing,The application freezes after opening customer history,technical_issue,medium,in_progress,agent-2,api,Firefox,desktop,freeze
+cust-csv-019,csv019@example.com,Ada CSV 019,Add webhook,Please add a webhook for ticket status changes,feature_request,medium,new,,chat,Edge,desktop,webhook
+cust-csv-020,csv020@example.com,Ada CSV 020,Search defect,Steps to reproduce search defect in ticket list,bug_report,medium,new,,web_form,Chrome,desktop,search|bug
+cust-csv-021,csv021@example.com,Ada CSV 021,Cannot access portal,I can't access the customer support portal,account_access,urgent,new,,web_form,Safari,mobile,access
+cust-csv-022,csv022@example.com,Ada CSV 022,Refund status,I need an update on my refund status,billing_question,medium,waiting_customer,agent-3,email,Chrome,desktop,refund
+cust-csv-023,csv023@example.com,Ada CSV 023,API timeout,The API returns timeout errors during sync,technical_issue,high,in_progress,agent-4,api,Firefox,desktop,api|timeout
+cust-csv-024,csv024@example.com,Ada CSV 024,Suggestion for labels,Suggestion to add colored labels for teams,feature_request,low,new,,chat,Chrome,desktop,suggestion|labels
+cust-csv-025,csv025@example.com,Ada CSV 025,Upload defect,Steps to reproduce file upload defect are simple,bug_report,medium,new,,web_form,Edge,desktop,upload|bug
+cust-csv-026,csv026@example.com,Ada CSV 026,Login blocking,Login is blocking our entire support team today,account_access,high,new,agent-1,email,Chrome,desktop,login|blocking
+cust-csv-027,csv027@example.com,Ada CSV 027,Billing address,Please update the billing address on my invoice,billing_question,medium,new,,phone,Safari,mobile,billing
+cust-csv-028,csv028@example.com,Ada CSV 028,Browser crash,Reports page crashes only in the browser,technical_issue,medium,new,,web_form,Firefox,desktop,crash
+cust-csv-029,csv029@example.com,Ada CSV 029,Enhancement request,An enhancement for keyboard shortcuts would help,feature_request,medium,new,,chat,Chrome,desktop,enhancement
+cust-csv-030,csv030@example.com,Ada CSV 030,Notification bug,Steps to reproduce notification badge bug,bug_report,medium,in_progress,agent-2,api,Chrome,desktop,notification|bug
+cust-csv-031,csv031@example.com,Ada CSV 031,Locked account,My account is locked after too many attempts,account_access,medium,new,,web_form,Safari,mobile,locked
+cust-csv-032,csv032@example.com,Ada CSV 032,Payment receipt,I need a receipt for my recent payment,billing_question,medium,new,,email,Chrome,desktop,receipt
+cust-csv-033,csv033@example.com,Ada CSV 033,Important sync error,Important customer sync error is blocking imports,technical_issue,high,new,agent-4,api,Firefox,desktop,sync|error
+cust-csv-034,csv034@example.com,Ada CSV 034,Feature idea,Feature idea for bulk ticket assignment,feature_request,medium,new,,chat,Edge,desktop,feature
+cust-csv-035,csv035@example.com,Ada CSV 035,Sorting defect,Steps to reproduce sorting defect in the table,bug_report,medium,new,,web_form,Chrome,desktop,sorting
+cust-csv-036,csv036@example.com,Ada CSV 036,Password expired,My password expired and reset does not work,account_access,medium,new,,email,Chrome,desktop,password
+cust-csv-037,csv037@example.com,Ada CSV 037,Subscription refund,I want a refund for unused subscription time,billing_question,medium,new,,phone,Safari,mobile,subscription|refund
+cust-csv-038,csv038@example.com,Ada CSV 038,Critical error,Critical error appears when creating tickets,technical_issue,urgent,in_progress,agent-1,web_form,Firefox,desktop,critical|error
+cust-csv-039,csv039@example.com,Ada CSV 039,Minor suggestion,Minor suggestion for improving ticket filters,feature_request,low,new,,chat,Chrome,desktop,suggestion
+cust-csv-040,csv040@example.com,Ada CSV 040,Comment defect,Steps to reproduce comment saving defect,bug_report,medium,new,,api,Edge,desktop,comments
+cust-csv-041,csv041@example.com,Ada CSV 041,Cannot login,I cannot login with my company account,account_access,urgent,new,,web_form,Safari,desktop,login
+cust-csv-042,csv042@example.com,Ada CSV 042,Invoice tax question,I have a question about tax on my invoice,billing_question,medium,new,,email,Chrome,desktop,tax|invoice
+cust-csv-043,csv043@example.com,Ada CSV 043,Slow reports,Reports are slow and sometimes show an error,technical_issue,medium,new,,api,Firefox,desktop,reports|error
+cust-csv-044,csv044@example.com,Ada CSV 044,Add dark mode,Please add dark mode for agent workspace,feature_request,medium,new,,chat,Chrome,desktop,dark-mode
+cust-csv-045,csv045@example.com,Ada CSV 045,Attachment defect,Steps to reproduce attachment preview defect,bug_report,medium,new,,web_form,Edge,desktop,attachment
+cust-csv-046,csv046@example.com,Ada CSV 046,Access security,I have a security concern about shared access,account_access,urgent,new,agent-2,email,Chrome,desktop,security
+cust-csv-047,csv047@example.com,Ada CSV 047,Payment method,I cannot change my payment method in billing,billing_question,medium,new,,phone,Safari,mobile,payment
+cust-csv-048,csv048@example.com,Ada CSV 048,Chat error,Chat widget shows an error after sending text,technical_issue,medium,new,,web_form,Chrome,mobile,chat|error
+cust-csv-049,csv049@example.com,Ada CSV 049,Suggestion inbox,Suggestion to create a shared team inbox,feature_request,low,new,,chat,Firefox,desktop,suggestion
+cust-csv-050,csv050@example.com,Ada CSV 050,Profile defect,Steps to reproduce profile update defect,bug_report,medium,new,,api,Chrome,desktop,profile|bug

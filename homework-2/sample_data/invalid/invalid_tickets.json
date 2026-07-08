@@ -1,0 +1,14 @@
+[
+  {
+    "customer_id": "bad-json-001",
+    "customer_email": "invalid-email",
+    "customer_name": "Bad Json",
+    "subject": "Invalid ticket",
+    "description": "short",
+    "metadata": {
+      "source": "fax",
+      "browser": "Chrome",
+      "device_type": "watch"
+    }
+  }
+]
