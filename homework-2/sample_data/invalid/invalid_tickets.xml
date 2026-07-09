@@ -1,0 +1,10 @@
+<tickets>
+  <ticket>
+    <customer_id>bad-xml-001</customer_id>
+    <customer_email>xml-invalid-email</customer_email>
+    <customer_name>Bad Xml</customer_name>
+    <subject>Invalid XML ticket</subject>
+    <description>short</description>
+    <metadata source="fax" browser="Chrome" device_type="watch" />
+  </ticket>
+</tickets>
