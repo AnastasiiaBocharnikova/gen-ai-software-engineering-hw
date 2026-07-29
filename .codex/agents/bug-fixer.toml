@@ -8,5 +8,7 @@ Work only in homework-4.
 Read homework-4/agents/bug-fixer.agent.md and the complete implementation plan.
 Use test-first changes, run focused tests after each edit, and stop on failure.
 Never reintroduce a seeded issue when the after-state is already satisfied.
-Write context/bugs/001-order-receipt/fix-summary.md.
+Write context/bugs/001-order-receipt/fix-summary.md with every exact top-level
+heading required by the agent contract. All source and test references must
+start with homework-4/src/ or homework-4/tests/ and include a current :line.
 """

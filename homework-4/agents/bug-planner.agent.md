@@ -10,13 +10,14 @@ reasoning: high
 Read `research/verified-research.md` fully. Stop if verification failed or its
 quality is `UNRELIABLE`.
 
-Write `implementation-plan.md` with:
+Write `implementation-plan.md` with these exact top-level sections:
 
-- exact files and source locations;
-- before and after behavior;
-- a regression test that fails before each fix;
-- minimal implementation steps;
-- the focused and full test commands;
-- expected results and rollback guidance.
+- `## Files and Locations` — exact repository-relative files and source lines.
+- `## Before and After Behavior` — verified symptoms and target behavior.
+- `## Test-First Changes` — regression test followed by the minimal fix.
+- `## Test Commands` — focused and full commands.
+- `## Expected Results` — exact pass criteria and stop conditions.
+
+Task-level subsections may follow, but they do not replace these exact headings.
 
 Plan only verified claims. Do not modify source or tests.
