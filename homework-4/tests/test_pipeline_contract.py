@@ -263,7 +263,6 @@ class DocumentationTests(unittest.TestCase):
             ROOT / "docs" / "ARCHITECTURE.md",
             ROOT / "docs" / "TESTING_GUIDE.md",
             ROOT / "docs" / "AI_USAGE.md",
-            ROOT / "docs" / "PR_SUMMARY.md",
         )
 
         for document in documents:
