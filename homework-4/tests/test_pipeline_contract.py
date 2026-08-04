@@ -113,6 +113,25 @@ class SkillDefinitionTests(unittest.TestCase):
         ):
             self.assertIn(principle, content)
 
+    def test_first_skill_is_actionable_and_measurable(self) -> None:
+        content = read(SKILLS / "unit-tests-FIRST.md")
+        required_sections = (
+            "## Acceptance Criteria",
+            "## Risk-Based Test Selection",
+            "## Generation Workflow",
+            "## Good Example",
+            "## Bad Example",
+            "## Anti-Patterns",
+            "## Required test-report.md Template",
+            "## Completion Checklist",
+            "## Stop Conditions",
+        )
+
+        for section in required_sections:
+            self.assertIn(section, content)
+        for term in ("boundary", "security regression", "error propagation", "RED"):
+            self.assertIn(term, content)
+
 
 class ExecutablePipelineTests(unittest.TestCase):
     def test_every_role_has_an_executable_custom_agent_profile(self) -> None:
