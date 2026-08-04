@@ -7,6 +7,14 @@
         "Authorization": "Bearer ${GITHUB_PAT_TOKEN}",
         "X-MCP-Readonly": "true"
       }
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem@2026.7.10",
+        "."
+      ]
     }
   }
 }
