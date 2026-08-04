@@ -5,6 +5,12 @@ http_headers = { "X-MCP-Readonly" = "true" }
 default_tools_approval_mode = "writes"
 required = true
 
+[mcp_servers.jira]
+url = "https://mcp.atlassian.com/v1/mcp/authv2"
+enabled_tools = ["getAccessibleAtlassianResources", "searchJiraIssuesUsingJql"]
+default_tools_approval_mode = "writes"
+required = true
+
 [mcp_servers.filesystem]
 command = "npx"
 args = ["-y", "@modelcontextprotocol/server-filesystem@2026.7.10", "."]

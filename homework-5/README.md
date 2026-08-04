@@ -4,7 +4,7 @@
 
 ## Overview
 
-This assignment configures external MCP servers for Codex and implements a custom FastMCP server. Task 1 connects Codex to GitHub, while Task 2 gives Codex restricted read-only tool access to the Homework 5 directory.
+This assignment configures external MCP servers for Codex and implements a custom FastMCP server. Tasks 1–3 connect Codex to GitHub, a restricted local filesystem directory, and Jira.
 
 ## Task 1: GitHub MCP
 
@@ -115,6 +115,66 @@ The successful Filesystem MCP request and response are captured at:
 docs/screenshots/filesystem-mcp-result.png
 ```
 
+## Task 3: Jira MCP
+
+The Jira integration uses Atlassian's official hosted Rovo MCP server with OAuth 2.1. OAuth credentials are stored by Codex outside this repository. The committed configuration contains no Jira password, token, or session credential.
+
+The integration targets:
+
+- Jira site: `https://anastasiiabocharnikova.atlassian.net`
+- Project key: `SCRUM`
+- Issue type: `Bug`
+
+Only the tools needed to discover the accessible Jira site and run a read-only JQL query are enabled:
+
+- `getAccessibleAtlassianResources`
+- `searchJiraIssuesUsingJql`
+
+### Authenticate and verify
+
+From `homework-5/`, run:
+
+```bash
+codex mcp login jira
+codex mcp list
+codex mcp get jira
+```
+
+Complete Atlassian's browser consent flow and authorize access only to the intended Jira Cloud site. In Codex, use `/mcp` and confirm that `jira` is connected.
+
+### Demonstration request
+
+```text
+Using only the Jira MCP server, give me the last five bugs from project SCRUM
+on https://anastasiiabocharnikova.atlassian.net.
+
+Use JQL:
+project = SCRUM AND issuetype = "Баг" ORDER BY created DESC
+
+Return only the five ticket keys, newest first. Do not include summaries,
+descriptions, names, emails, comments, or other potentially sensitive data.
+Do not create or modify anything.
+```
+
+The Jira site uses the localized issue type name `Баг`, so the JQL uses that
+exact value instead of `Bug`.
+
+### Evidence and privacy
+
+The successful request and response are captured at:
+
+```text
+docs/screenshots/jira-mcp-result.png
+```
+
+The OAuth consent screen for the selected Jira site is captured at:
+
+```text
+docs/screenshots/jira-oauth-consent.png
+```
+
+The screenshot must show the request, completed Jira MCP calls, and five ticket keys. It must not expose OAuth tokens, ticket summaries, descriptions, user information, or comments.
+
 ## Project structure
 
 ```text
@@ -128,7 +188,9 @@ homework-5/
     └── screenshots/
         ├── codex_1.png
         ├── filesystem-mcp-result.png
+        ├── jira-mcp-result.png
+        ├── jira-oauth-consent.png
         └── terminal.png
 ```
 
-Additional server configuration, custom-server code, setup instructions, tests, and screenshots will be added in Tasks 3–4.
+The custom-server code, setup instructions, tests, and remaining screenshots will be added in Task 4.
