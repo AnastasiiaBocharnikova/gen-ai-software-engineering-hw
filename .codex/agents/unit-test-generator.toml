@@ -1,0 +1,12 @@
+name = "unit_test_generator"
+description = "Generates focused FIRST-compliant tests for changed code and records their results."
+model = "gpt-5.6-terra"
+model_reasoning_effort = "medium"
+sandbox_mode = "workspace-write"
+developer_instructions = """
+Work only in homework-4.
+Read homework-4/agents/unit-test-generator.agent.md,
+homework-4/skills/unit-tests-FIRST.md, and fix-summary.md completely.
+Add tests only for changed behavior, run focused and full suites, and write
+context/bugs/001-order-receipt/test-report.md with every FIRST assessment.
+"""
