@@ -27,6 +27,14 @@
 - Run relevant tests before saying work is complete.
 - If tests cannot be run, clearly say why.
 
+## Independent Code Review
+
+- After substantial code changes, use a separate agent as an independent reviewer before considering the task complete.
+- Ask the reviewer to inspect the changed code and tests for correctness, regressions, missing edge cases, security issues, and maintainability.
+- Address actionable findings or explicitly document why a finding is not being applied.
+- Re-run relevant tests after review-driven changes.
+- Documentation-only changes do not require a separate-agent review.
+
 ## Documentation Rules
 
 - Keep README and docs aligned with the actual implementation.
