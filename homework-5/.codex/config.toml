@@ -18,3 +18,11 @@ cwd = "."
 enabled_tools = ["list_allowed_directories", "list_directory", "directory_tree", "read_text_file"]
 default_tools_approval_mode = "writes"
 required = true
+
+[mcp_servers.custom_lorem]
+command = ".venv/bin/python"
+args = ["custom-mcp-server/server.py"]
+cwd = "."
+enabled_tools = ["read"]
+default_tools_approval_mode = "writes"
+required = true

@@ -17,6 +17,8 @@
 - Restricted the Filesystem MCP tool allowlist to read-only operations needed by Task 2.
 - Selected Atlassian OAuth 2.1 so Jira credentials remain outside the repository.
 - Limited the Jira result to ticket keys to avoid exposing sensitive issue content.
+- Designed the custom FastMCP Resource, `read` Tool, validation, and tests.
+- Used test-driven development to verify exact word limits before completing the server.
 
 ## Important prompt pattern
 
@@ -57,6 +59,14 @@ Do not create or modify anything.
 The Jira site uses the localized issue type name `Баг`, so the JQL uses that
 exact value instead of `Bug`.
 
+The Task 4 prompt verifies the custom Tool without changing files:
+
+```text
+Using only the custom_lorem MCP server, call the read tool with word_count set
+to 30. Return the tool result and state the exact number of returned words. Do
+not modify any files.
+```
+
 ## Manual work and review
 
 - The repository owner supplies the fine-grained GitHub token outside version control.
@@ -65,3 +75,5 @@ exact value instead of `Bug`.
 - The Filesystem MCP result is checked to confirm that only the intended Homework 5 directory is allowed.
 - Atlassian OAuth consent is completed manually for `https://anastasiiabocharnikova.atlassian.net`.
 - The Jira screenshot is reviewed to ensure that it contains ticket keys only.
+- FastMCP output and the exact 30-word result are verified through automated tests.
+- The custom MCP screenshot is manually reviewed for readability and secrets.

@@ -4,7 +4,7 @@
 
 ## Overview
 
-This assignment configures external MCP servers for Codex and implements a custom FastMCP server. Tasks 1–3 connect Codex to GitHub, a restricted local filesystem directory, and Jira.
+This assignment configures four MCP servers for Codex. Tasks 1–3 connect Codex to GitHub, a restricted local filesystem directory, and Jira. Task 4 implements a custom FastMCP server that returns an exact number of words from a local Markdown resource.
 
 ## Task 1: GitHub MCP
 
@@ -175,22 +175,82 @@ docs/screenshots/jira-oauth-consent.png
 
 The screenshot must show the request, completed Jira MCP calls, and five ticket keys. It must not expose OAuth tokens, ticket summaries, descriptions, user information, or comments.
 
+## Task 4: Custom FastMCP Server
+
+The custom Python server in `custom-mcp-server/server.py` uses FastMCP 3.4.4
+and the local stdio transport. It reads `lorem-ipsum.md` and exposes the same
+word-limited content through two MCP primitives:
+
+- **Resource:** a read-only URI that a client reads from a file, API, or other
+  content source. This server provides `lorem://content{?word_count}`.
+- **Tool:** an action that a client can call. This server provides
+  `read(word_count=30)`.
+
+Both interfaces use one shared `read_words` function and return exactly the
+requested number of whitespace-separated words. Counts below one or above the
+available source length are rejected with a clear error.
+
+### Tech stack
+
+- Python 3.11 or newer
+- FastMCP 3.4.4
+- pytest 8.4.2
+- pytest-cov 6.2.1
+- MCP stdio transport
+
+### Setup, run, and test
+
+Complete installation, startup, MCP connection, usage, testing, coverage, and
+troubleshooting instructions are in [`HOWTORUN.md`](HOWTORUN.md).
+
+Quick verification:
+
+```bash
+python3.11 -m venv .venv
+.venv/bin/python -m pip install -r custom-mcp-server/requirements.txt
+.venv/bin/python -m pytest --cov=custom-mcp-server --cov-fail-under=85
+codex mcp get custom_lorem
+```
+
+### Demonstration request
+
+```text
+Using only the custom_lorem MCP server, call the read tool with word_count set
+to 30. Return the tool result and state the exact number of returned words. Do
+not modify any files.
+```
+
+The successful request and response must be captured at:
+
+```text
+docs/screenshots/custom-mcp-read-tool-result.png
+```
+
 ## Project structure
 
 ```text
 homework-5/
 ├── .codex/config.toml
+├── HOWTORUN.md
 ├── mcp.json
 ├── README.md
 ├── TASKS.md
+├── custom-mcp-server/
+│   ├── lorem-ipsum.md
+│   ├── requirements.txt
+│   └── server.py
+├── tests/
+│   └── test_custom_mcp_server.py
 └── docs/
     ├── AI_USAGE.md
     └── screenshots/
         ├── codex_1.png
+        ├── custom-mcp-read-tool-result.png
         ├── filesystem-mcp-result.png
         ├── jira-mcp-result.png
         ├── jira-oauth-consent.png
         └── terminal.png
 ```
 
-The custom-server code, setup instructions, tests, and remaining screenshots will be added in Task 4.
+The local `.venv`, pytest cache, coverage files, and other generated artifacts
+are intentionally excluded from version control.
