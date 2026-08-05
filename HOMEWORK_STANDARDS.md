@@ -152,6 +152,8 @@ Before considering a homework complete:
 - App starts successfully
 - Tests pass
 - Coverage target is met
+- Substantial code changes received an independent review from a separate agent
+- Actionable review findings were addressed or explicitly documented
 - README is accurate
 - API docs match implementation
 - Architecture docs match implementation
@@ -159,4 +161,3 @@ Before considering a homework complete:
 - Invalid sample data is present when needed
 - Screenshots are saved when required
 - No generated cache/build artifacts are committed unless required
-

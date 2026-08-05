@@ -1,0 +1,30 @@
+{
+  "mcpServers": {
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "Authorization": "Bearer ${GITHUB_PAT_TOKEN}",
+        "X-MCP-Readonly": "true"
+      }
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem@2026.7.10",
+        "."
+      ]
+    },
+    "jira": {
+      "type": "http",
+      "url": "https://mcp.atlassian.com/v1/mcp/authv2"
+    },
+    "custom_lorem": {
+      "command": ".venv/bin/python",
+      "args": [
+        "custom-mcp-server/server.py"
+      ]
+    }
+  }
+}

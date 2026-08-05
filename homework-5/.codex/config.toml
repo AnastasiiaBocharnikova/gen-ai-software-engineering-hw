@@ -1,0 +1,28 @@
+[mcp_servers.github]
+url = "https://api.githubcopilot.com/mcp/"
+bearer_token_env_var = "GITHUB_PAT_TOKEN"
+http_headers = { "X-MCP-Readonly" = "true" }
+default_tools_approval_mode = "writes"
+required = true
+
+[mcp_servers.jira]
+url = "https://mcp.atlassian.com/v1/mcp/authv2"
+enabled_tools = ["getAccessibleAtlassianResources", "searchJiraIssuesUsingJql"]
+default_tools_approval_mode = "writes"
+required = true
+
+[mcp_servers.filesystem]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-filesystem@2026.7.10", "."]
+cwd = "."
+enabled_tools = ["list_allowed_directories", "list_directory", "directory_tree", "read_text_file"]
+default_tools_approval_mode = "writes"
+required = true
+
+[mcp_servers.custom_lorem]
+command = ".venv/bin/python"
+args = ["custom-mcp-server/server.py"]
+cwd = "."
+enabled_tools = ["read"]
+default_tools_approval_mode = "writes"
+required = true
