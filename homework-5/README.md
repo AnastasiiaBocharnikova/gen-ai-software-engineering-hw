@@ -8,7 +8,7 @@ This assignment configures four MCP servers for Codex. Tasks 1–3 connect Codex
 
 ## Task 1: GitHub MCP
 
-The GitHub integration uses GitHub's hosted Streamable HTTP endpoint. The functional, project-scoped Codex configuration is stored in `.codex/config.toml`. The sanitized `mcp.json` mirrors the same server registration for the assignment deliverable; Codex itself reads the TOML configuration.
+The GitHub integration uses GitHub's hosted Streamable HTTP endpoint. The functional, project-scoped Codex configuration is stored in `.codex/config.toml`. The sanitized `mcp.json` mirrors the server registrations for the assignment deliverable; Codex itself reads the TOML configuration. Codex-specific tool allowlists remain in `.codex/config.toml`, so another client loading `mcp.json` must apply equivalent restrictions.
 
 ### Prerequisites
 
@@ -57,7 +57,7 @@ The server is configured with GitHub's `X-MCP-Readonly` header. Codex also promp
 The successful request and response are captured at:
 
 ```text
-docs/screenshots/terminal.png
+docs/screenshots/github-mcp-result.png
 ```
 
 An additional Codex workflow screenshot is available at:
@@ -123,12 +123,17 @@ The integration targets:
 
 - Jira site: `https://anastasiiabocharnikova.atlassian.net`
 - Project key: `SCRUM`
-- Issue type: `Bug`
+- Issue type: `Bug` (localized as `Баг`)
 
 Only the tools needed to discover the accessible Jira site and run a read-only JQL query are enabled:
 
 - `getAccessibleAtlassianResources`
 - `searchJiraIssuesUsingJql`
+
+Atlassian's shared OAuth consent screen advertises Read, Search, and Write
+scopes. The local Codex configuration does not expose Jira mutation tools: its
+allowlist contains only the two read/search tools above. Other MCP clients must
+enforce an equivalent allowlist before using this registration.
 
 ### Authenticate and verify
 
@@ -203,6 +208,13 @@ available source length are rejected with a clear error.
 Complete installation, startup, MCP connection, usage, testing, coverage, and
 troubleshooting instructions are in [`HOWTORUN.md`](HOWTORUN.md).
 
+Additional references:
+
+- [`docs/API_REFERENCE.md`](docs/API_REFERENCE.md): Resource, Tool, parameters,
+  outputs, and validation errors
+- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md): server components and request flow
+- [`docs/TESTING_GUIDE.md`](docs/TESTING_GUIDE.md): test strategy and commands
+
 Quick verification:
 
 ```bash
@@ -242,14 +254,17 @@ homework-5/
 ├── tests/
 │   └── test_custom_mcp_server.py
 └── docs/
+    ├── API_REFERENCE.md
+    ├── ARCHITECTURE.md
     ├── AI_USAGE.md
+    ├── TESTING_GUIDE.md
     └── screenshots/
         ├── codex_1.png
         ├── custom-mcp-read-tool-result.png
         ├── filesystem-mcp-result.png
+        ├── github-mcp-result.png
         ├── jira-mcp-result.png
-        ├── jira-oauth-consent.png
-        └── terminal.png
+        └── jira-oauth-consent.png
 ```
 
 The local `.venv`, pytest cache, coverage files, and other generated artifacts

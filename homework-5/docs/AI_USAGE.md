@@ -74,6 +74,8 @@ not modify any files.
 - The returned repository data and screenshot are manually reviewed for accuracy, readability, and sensitive information before submission.
 - The Filesystem MCP result is checked to confirm that only the intended Homework 5 directory is allowed.
 - Atlassian OAuth consent is completed manually for `https://anastasiiabocharnikova.atlassian.net`.
+- Atlassian's broad consent scopes are reviewed against the local Codex Jira
+  tool allowlist, which exposes only resource discovery and JQL search.
 - The Jira screenshot is reviewed to ensure that it contains ticket keys only.
 - FastMCP output and the exact 30-word result are verified through automated tests.
 - The custom MCP screenshot is manually reviewed for readability and secrets.

@@ -52,12 +52,14 @@ def test_tool_and_resource_return_matching_word_limited_content() -> None:
         async with Client(server.mcp) as client:
             default_result = await client.call_tool("read", {})
             custom_result = await client.call_tool("read", {"word_count": 12})
+            default_resource = await client.read_resource("lorem://content")
             resource_result = await client.read_resource(
                 "lorem://content?word_count=12"
             )
 
         assert word_count(default_result.data) == 30
         assert word_count(custom_result.data) == 12
+        assert word_count(default_resource[0].text) == 30
         assert resource_result[0].text == custom_result.data
 
     asyncio.run(exercise_server())

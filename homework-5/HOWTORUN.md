@@ -57,6 +57,17 @@ Start Codex from the same directory so relative paths resolve correctly:
 codex
 ```
 
+## Security policy
+
+Use `.codex/config.toml` as the runtime configuration for Codex. It contains
+the task-specific tool allowlists. The portable `mcp.json` records the four
+server registrations but cannot express all Codex-specific restrictions, so
+other MCP clients must configure equivalent read-only allowlists themselves.
+
+Atlassian's OAuth consent advertises Read, Search, and Write scopes for its
+shared hosted server. This homework exposes only resource discovery and JQL
+search tools through the local Jira allowlist.
+
 ## Use the Resource
 
 Resources are read-only URIs that expose content from sources such as files or
